@@ -1,0 +1,237 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f1e7;
+}
+
+.navigation {
+  display: flex;
+  padding: 15px 46px;
+  justify-content: space-between;
+  border-bottom: 0.5px solid #c2c5bd;
+}
+
+.club-indentity {
+  display: flex;
+  width: 300px;
+  gap: 10px;
+  text-transform: uppercase;
+}
+
+.club-indentity img {
+  padding-top: 2px;
+}
+
+.club-indentity .title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  font-style: normal;
+  padding-top: 8px;
+  color: #20251f;
+  cursor: pointer;
+}
+
+.club-indentity .edition {
+  font-family: "Inter", sans-serif;
+  color: #72746a;
+  font-size: 11px;
+  font-weight: 300;
+  margin: auto 0;
+}
+
+.nav-link {
+  display: flex;
+  width: 348px;
+  justify-content: space-between;
+  font-family: "Inter", sans-serif;
+}
+
+.nav-link .active-nav {
+  margin: auto 0;
+  color: #294be8;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: -0.05em;
+  cursor: pointer;
+}
+
+.nav-link .rule-nav {
+  margin: auto 0;
+  color: #20251f;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-link .rule-nav:hover {
+  text-decoration: underline;
+}
+
+.nav-link .game-mode {
+  display: flex;
+  padding: 4px;
+  align-items: center;
+  height: 30px;
+  border: 0.5px solid #c2c5bd;
+  border-radius: 25px;
+  margin: auto 0;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.nav-link .game-mode .mode-lables {
+  padding: 5px;
+  color: #20251f;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.nav-link .game-mode .mode-indigator {
+  height: 104px;
+  color: #294be8;
+  font-size: 59px;
+  font-weight: bold;
+}
+
+.nav-link .game-mode:hover {
+  background-color: #c8c6b5;
+}
+
+.game-intro {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 46px;
+}
+
+.game-title {
+  width: 600px;
+}
+
+.game-title .eyebrow {
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  color: #294be8;
+}
+
+.game-title .title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  font-style: normal;
+  color: #20251f;
+}
+
+.game-intro .game-description {
+  display: flex;
+  align-items: end;
+}
+
+.game-intro .game-description h1 {
+  font-family: "Inter", sans-serif;
+  color: #72746a;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: left;
+}
+
+.game-surface {
+  padding: 0 46px 15px 46px;
+}
+
+.match-board {
+  height: 350px;
+  width: auto;
+  background-color: #fffcf4;
+  border-radius: 15px;
+}
+
+.match-board .score-board {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 95px;
+  width: auto;
+  padding: 22px 47px;
+  background-color: #294be8;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  color: #ffffff;
+}
+
+.score-board > .competitor-score {
+  display: flex;
+  gap: 20px;
+  width: 120px;
+  margin-right: 47px;
+}
+.score-board > .competitor-score .competitor-identity {
+  padding-top: 16px;
+}
+.competitor-identity .competitor-label {
+  display: flex;
+  gap: 3px;
+}
+.competitor-identity .competitor-label .user-name {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+.competitor-identity .win-marker {
+  display: flex;
+  gap: 1px;
+}
+
+.win-marker .marker-img {
+  height: auto;
+  width: 20px;
+  border-radius: 15px;
+}
+
+.win-marker > :nth-child(1) {
+  background-color: #f4d94e;
+}
+.win-marker > :nth-child(2) {
+  background-color: #f4d94e;
+}
+.win-marker > :nth-child(3) {
+  background-color: #f4d94e;
+}
+
+.competitor-score .score {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.score-board .match-format {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.match-format .match-taget {
+  margin-bottom: 6px;
+  font-family: "Inter", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 300;
+}
+.match-format .vs-badge {
+  width: 40px;
+  text-align: center;
+  background-color: #1834b1;
+  border-radius: 25px;
+}
+.match-format .vs-badge h1 {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-style: normal;
+}
