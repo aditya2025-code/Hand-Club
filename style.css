@@ -123,7 +123,7 @@ body {
 
 .game-title .title {
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 3.5rem;
+  font-size: 3.3rem;
   font-weight: 800;
   font-style: normal;
   color: #20251f;
@@ -143,11 +143,12 @@ body {
 }
 
 .game-surface {
+  height: 350px;
   padding: 0 46px 15px 46px;
 }
 
 .match-board {
-  height: 350px;
+  height: 319px;
   width: auto;
   background-color: #fffcf4;
   border-radius: 15px;
@@ -157,7 +158,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 95px;
+  height: 76px;
   width: auto;
   padding: 22px 47px;
   background-color: #294be8;
@@ -291,6 +292,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 20px;
 }
 .player-result .round-badge {
   background-color: #f4d94e;
@@ -345,4 +347,86 @@ body {
   font-size: 0.8rem;
   font-weight: 400;
   margin-top: 11px;
+}
+.next-hand{
+  width: auto;
+}
+.next-hand .choice-heading{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 13px;
+}
+.choice-heading .choice-instruction{
+  display: flex;
+  gap: 9px;
+}
+.choice-instruction .title{
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.choice-instruction .instruction{
+  color: #72746A;
+  font-family: "Inter", sans-serif;
+  font-size: .6rem;
+  font-weight: 400;
+  margin-top: 9px;
+}
+.choice-heading .reset-action{
+  display: flex;
+  gap: 4px;
+  cursor: pointer;
+}
+.reset-action .reset-label{
+  color: #72746A;
+  font-family: "Inter", sans-serif;
+  font-size: .7rem;
+  font-weight: 400;
+  margin-top: 9px;
+}
+.reset-action .rotate-ccw{
+  margin-top: 7.5px;
+}
+.next-hand .gesture-choice{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  width: auto;
+  height: 250px;
+  margin-top: 6px;
+}
+.gesture-choice .gesture-choices{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FFFCF4;
+  height: 100%;
+  width: 100%;
+  max-width: 593px;
+  border: .5px solid #D9D7CC;
+  border-radius: 15px;
+}
+.gesture-choice > :first-child{
+  background-color: #E6EBFF;
+  border: 2px solid #294BE8;
+  border-radius: 15px;
+  color: #294BE8;
+}
+.choice-status{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  font-family: "Inter", sans-serif;
+  text-transform: uppercase;
+  font-size: .35rem;
+}
+.choice-status .selected-badge{
+  display: flex;
+  gap: 5px;
+}
+.selected-badge .check{
+  margin-top: 2.8px;
 }
