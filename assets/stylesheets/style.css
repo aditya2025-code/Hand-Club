@@ -1,15 +1,28 @@
+/* =====================================================
+   HAND CLUB – style.css (responsive version)
+   Desktop look is unchanged. Breakpoints:
+   ≤1024px  small laptop / tablet landscape
+   ≤768px   tablet portrait / large phone
+   ≤480px   phone
+   ===================================================== */
+
 * {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
 }
+html {
+  -webkit-text-size-adjust: 100%;
+}
 body {
   background-color: #f5f1e7;
   font-family: "Inter", sans-serif;
   color: #20251f;
+  overflow-x: hidden;
 }
 main {
-  height: 100dvh;
+  /* was a fixed 100dvh, which made the footer overlap the content */
+  min-height: auto;
   width: 100%;
 }
 .navigation {
@@ -84,6 +97,7 @@ main {
   color: #20251f;
   font-size: 11px;
   font-weight: 600;
+  white-space: nowrap;
 }
 .nav-link .game-mode .mode-indigator {
   height: 104px;
@@ -101,6 +115,7 @@ main {
 }
 .game-title {
   width: 600px;
+  max-width: 100%;
 }
 .game-title .eyebrow {
   font-family: "Inter", sans-serif;
@@ -126,11 +141,11 @@ main {
   text-align: left;
 }
 .game-surface {
-  height: 350px;
+  height: auto;
   padding: 0 46px 15px 46px;
 }
 .match-board {
-  height: 320px;
+  height: auto;
   width: auto;
   background-color: #fffcf4;
   border-radius: 15px;
@@ -169,7 +184,7 @@ main {
   display: flex;
   gap: 1px;
 }
-.win-marker .marker-img {
+.win-marker img {
   height: auto;
   width: 20px;
   border-radius: 15px;
@@ -200,6 +215,7 @@ main {
   font-family: "Inter", sans-serif;
   font-size: 0.7rem;
   font-weight: 300;
+  text-align: center;
 }
 .match-format .vs-badge {
   width: 40px;
@@ -218,10 +234,13 @@ main {
   padding: 15px 37px 25px 37px;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 }
 .round-arena .player-hand {
   height: 229px;
   width: 415px;
+  flex: 1 1 0;
+  max-width: 415px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -261,7 +280,9 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   padding-bottom: 20px;
+  flex: 0 0 auto;
 }
 .player-result .round-badge {
   background-color: #f4d94e;
@@ -354,6 +375,7 @@ main {
   font-size: 0.7rem;
   font-weight: 400;
   margin-top: 9px;
+  white-space: nowrap;
 }
 .reset-action .rotate-ccw {
   margin-top: 7.5px;
@@ -364,7 +386,7 @@ main {
   justify-content: space-between;
   gap: 10px;
   width: auto;
-  height: 250px;
+  height: auto;
   margin-top: 6px;
 }
 .gesture-choice .gesture-choices {
@@ -377,6 +399,7 @@ main {
   max-width: 593px;
   border: 0.5px solid #d9d7cc;
   border-radius: 15px;
+  cursor: pointer;
 }
 .gesture-choice > :first-child {
   background-color: #e6ebff;
@@ -436,7 +459,8 @@ main {
 .rules-footer .rules-strip {
   display: flex;
   justify-content: space-between;
-  height: 98px;
+  height: auto;
+  min-height: 98px;
   width: 95%;
   margin: 0 auto;
   padding: 20px 0;
@@ -445,7 +469,7 @@ main {
   font-size: 0.3rem;
 }
 .rules-strip .rules-intro {
-  height: 100px;
+  height: auto;
   width: 250px;
 }
 .rules-intro .rules-title {
@@ -470,6 +494,7 @@ main {
 .game-rules .rule-symbol {
   height: 30px;
   width: 30px;
+  flex-shrink: 0;
   background-color: #e6ebff;
   border-radius: 5px;
   display: flex;
@@ -523,4 +548,326 @@ a {
   width: 8px;
   margin-top: 3px;
   background-color: #294be8;
+}
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+/* ---------- Small laptop / tablet landscape ---------- */
+@media (max-width: 1024px) {
+  .navigation {
+    padding: 24px 32px;
+  }
+  .game-intro {
+    padding: 20px 32px;
+    gap: 24px;
+  }
+  .game-title .title {
+    font-size: clamp(3rem, 7vw, 4rem);
+    line-height: 1.05;
+  }
+  .game-surface {
+    padding: 0 32px 15px 32px;
+  }
+  .match-board .score-board {
+    padding: 22px 32px;
+  }
+  .score-board > .competitor-score {
+    margin-right: 0;
+  }
+  .match-board .round-arena {
+    padding: 15px 24px 25px 24px;
+  }
+  .player-result .result-headline {
+    font-size: 2.6rem;
+  }
+  .choice-instruction .title {
+    font-size: 1.8rem;
+  }
+  .gesture-choice .gesture-choices {
+    height: 240px;
+  }
+
+  /* rules strip wraps: intro on its own row, 3 rules below */
+  .rules-footer .rules-strip {
+    flex-wrap: wrap;
+    gap: 20px 24px;
+  }
+  .rules-strip .rules-intro {
+    width: 100%;
+  }
+  .game-rules {
+    flex: 1 1 240px;
+    width: auto;
+    justify-content: flex-start;
+  }
+  .footer {
+    flex-wrap: wrap;
+    gap: 10px 24px;
+  }
+}
+
+/* ---------- Tablet portrait / large phone ---------- */
+@media (max-width: 768px) {
+  /* header */
+  .navigation {
+    height: auto;
+    flex-wrap: wrap;
+    align-items: center;
+    row-gap: 12px;
+    padding: 16px 20px;
+  }
+  .club-indentity {
+    width: auto;
+  }
+  .club-indentity .title {
+    font-size: 30px;
+  }
+  .nav-link {
+    width: 100%;
+    gap: 12px;
+  }
+
+  /* intro */
+  .game-intro {
+    flex-direction: column;
+    gap: 10px;
+    padding: 18px 20px;
+  }
+  .game-title {
+    width: 100%;
+  }
+  .game-title .title {
+    font-size: clamp(2.6rem, 12vw, 4rem);
+  }
+  .game-intro .game-description {
+    align-items: flex-start;
+  }
+
+  /* board */
+  .game-surface {
+    padding: 0 20px 20px 20px;
+  }
+  .match-board .score-board {
+    height: auto;
+    padding: 16px 20px;
+  }
+  .score-board > .competitor-score {
+    width: auto;
+    gap: 12px;
+    align-items: center;
+  }
+  .score-board > .competitor-score .competitor-identity {
+    padding-top: 0;
+  }
+  .competitor-score .score {
+    font-size: 48px;
+    line-height: 1;
+  }
+  .score-board .match-format {
+    width: auto;
+  }
+
+  /* arena: result on top, the two hands side by side below */
+  .match-board .round-arena {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 12px;
+    padding: 20px 16px 24px;
+  }
+  .round-arena .player-result {
+    grid-column: 1 / -1;
+    order: -1;
+    padding-bottom: 0;
+  }
+  .round-arena .player-hand {
+    height: auto;
+    width: 100%;
+    max-width: none;
+    padding-bottom: 4px;
+  }
+  .player-result .result-headline {
+    font-size: 2.6rem;
+  }
+
+  /* next move */
+  .next-hand .choice-heading {
+    margin-top: 22px;
+    gap: 12px;
+  }
+  .choice-heading .choice-instruction {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .choice-instruction .title {
+    font-size: 1.6rem;
+  }
+  .choice-instruction .instruction {
+    font-size: 0.75rem;
+    margin-top: 0;
+  }
+  .reset-action .reset-label {
+    font-size: 0.8rem;
+  }
+  .next-hand .gesture-choice {
+    align-items: stretch;
+  }
+  .gesture-choice .gesture-choices {
+    height: auto;
+    min-height: 0;
+    gap: 4px;
+  }
+  .gesture-choices .choice-illustration img {
+    width: 84px;
+  }
+  .choice-status,
+  .choice-info {
+    padding: 12px;
+  }
+  .choice-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+  .choice-info .choice-name {
+    font-size: 1.6rem;
+  }
+  .choice-info .winning-matchup {
+    margin-top: 0;
+    font-size: 0.7rem;
+  }
+
+  /* rules + footer */
+  .rules-footer .rules-strip {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: calc(100% - 40px);
+    gap: 18px;
+  }
+  .game-rules {
+    flex: none;
+    width: 100%;
+  }
+  .game-rules .rule-symbol {
+    margin-bottom: 0;
+  }
+  .footer {
+    width: calc(100% - 40px);
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ---------- Phone ---------- */
+@media (max-width: 480px) {
+  .club-indentity .edition {
+    display: none;
+  }
+  .nav-link .game-mode .mode-lables {
+    font-size: 10px;
+  }
+
+  /* score board: format on top, two scores underneath */
+  .match-board .score-board {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 12px;
+    padding: 14px 16px;
+  }
+  .score-board .match-format {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+  .match-format .match-taget {
+    margin-bottom: 0;
+  }
+  .score-board > .competitor-score {
+    min-width: 0;
+    width: auto;
+    gap: 8px;
+    justify-content: space-between;
+  }
+  .competitor-score .score {
+    font-size: 40px;
+  }
+  .competitor-identity .competitor-label .user-name {
+    font-size: 0.7rem;
+  }
+  .win-marker img {
+    width: 14px;
+  }
+
+  /* hands: scale the whole gesture stage down */
+  .round-arena .gesture-stage {
+    zoom: 0.72;
+  }
+  .player-hand .choice-name {
+    font-size: 1.4rem;
+  }
+  .player-hand .competitor-label {
+    text-align: center;
+  }
+  .player-result .result-headline {
+    font-size: 2.2rem;
+  }
+  .player-result .result-explaination {
+    font-size: 0.85rem;
+  }
+  .player-result .round-action .action {
+    width: 100%;
+    min-width: 200px;
+  }
+
+  /* choices: one card per row, picture on the left */
+  .next-hand .gesture-choice {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .gesture-choice .gesture-choices {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    max-width: none;
+    padding: 6px 0;
+  }
+  .gesture-choices .choice-illustration {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  .gesture-choices .choice-illustration img {
+    width: 76px;
+  }
+  .gesture-choices .choice-status {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 8px 12px 0;
+  }
+  .gesture-choices .choice-info {
+    grid-column: 2;
+    grid-row: 2;
+    padding: 0 12px 8px;
+  }
+  .choice-heading .reset-action {
+    align-self: flex-start;
+  }
+}
+
+/* ---------- Very small phones ---------- */
+@media (max-width: 360px) {
+  .club-indentity .title {
+    font-size: 26px;
+  }
+  .nav-link .rule-nav,
+  .nav-link .active-nav {
+    font-size: 12px;
+  }
+  .round-arena .gesture-stage {
+    zoom: 0.6;
+  }
 }
