@@ -8,14 +8,14 @@ body {
   font-family: "Inter", sans-serif;
   color: #20251f;
 }
-.main{
+main {
   height: 100dvh;
   width: 100%;
 }
 .navigation {
   display: flex;
-  height: 67px;
-  padding: 15px 46px;
+  height: 86px;
+  padding: 24px 46px;
   justify-content: space-between;
   border-bottom: 0.5px solid #c2c5bd;
 }
@@ -31,9 +31,8 @@ body {
 .club-indentity .title {
   font-family: "Barlow Condensed", sans-serif;
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 36px;
   font-style: normal;
-  padding-top: 8px;
   color: #20251f;
   cursor: pointer;
 }
@@ -110,7 +109,7 @@ body {
 }
 .game-title .title {
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 3.3rem;
+  font-size: 64px;
   font-weight: 800;
   font-style: normal;
   color: #20251f;
@@ -131,7 +130,7 @@ body {
   padding: 0 46px 15px 46px;
 }
 .match-board {
-  height: 319px;
+  height: 320px;
   width: auto;
   background-color: #fffcf4;
   border-radius: 15px;
@@ -140,7 +139,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 76px;
+  height: 86px;
   width: auto;
   padding: 22px 47px;
   background-color: #294be8;
@@ -155,7 +154,7 @@ body {
   margin-right: 47px;
 }
 .score-board > .competitor-score .competitor-identity {
-  padding-top: 16px;
+  padding-top: 25px;
 }
 .competitor-identity .competitor-label {
   display: flex;
@@ -186,8 +185,8 @@ body {
 }
 .competitor-score .score {
   font-family: "Barlow Condensed", sans-serif;
-  font-size: 3rem;
-  font-weight: 800;
+  font-size: 60px;
+  font-weight: 700;
   font-style: normal;
 }
 .score-board .match-format {
@@ -276,22 +275,22 @@ body {
   padding-top: 5px;
   font-size: 0.6rem;
 }
-.player-result .result-headline{
-  color: #294BE8;
+.player-result .result-headline {
+  color: #294be8;
   font-size: 3rem;
   font-weight: 900;
   font-style: normal;
 }
-.player-result .result-explaination{
-  color: #72746A;
+.player-result .result-explaination {
+  color: #72746a;
   font-size: 0.9rem;
   font-weight: 400;
   margin-top: 5px;
 }
-.player-result .round-action{
+.player-result .round-action {
   margin-top: 16px;
 }
-.player-result .round-action .action{
+.player-result .round-action .action {
   height: 50px;
   width: 150px;
   display: flex;
@@ -300,65 +299,66 @@ body {
   gap: 8px;
   border-radius: 10px;
   color: #ffffff;
-  background-color: #294BE8;
+  background-color: #294be8;
   cursor: pointer;
 }
-.player-result .round-action .action:hover{
+.player-result .round-action .action:hover {
   background-color: #193acb;
 }
-.action .label{
+.action .label {
   font-size: 0.9rem;
 }
-.action .rotate-ccw img{
+.action .rotate-ccw img {
   padding-top: 5px;
 }
-.player-result .match-progress{
-  color: #72746A;
+.player-result .match-progress {
+  color: #72746a;
   font-size: 0.8rem;
   font-weight: 400;
   margin-top: 11px;
 }
-.next-hand{
+.next-hand {
   width: auto;
 }
-.next-hand .choice-heading{
+.next-hand .choice-heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 13px;
+  margin-top: 27px;
+  margin-bottom: 14px;
 }
-.choice-heading .choice-instruction{
+.choice-heading .choice-instruction {
   display: flex;
   gap: 9px;
 }
-.choice-instruction .title{
+.choice-instruction .title {
   font-size: 2.1rem;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
-.choice-instruction .instruction{
-  color: #72746A;
+.choice-instruction .instruction {
+  color: #72746a;
   font-family: "Inter", sans-serif;
-  font-size: .6rem;
+  font-size: 0.6rem;
   font-weight: 400;
   margin-top: 9px;
 }
-.choice-heading .reset-action{
+.choice-heading .reset-action {
   display: flex;
   gap: 4px;
   cursor: pointer;
 }
-.reset-action .reset-label{
-  color: #72746A;
+.reset-action .reset-label {
+  color: #72746a;
   font-family: "Inter", sans-serif;
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: 400;
   margin-top: 9px;
 }
-.reset-action .rotate-ccw{
+.reset-action .rotate-ccw {
   margin-top: 7.5px;
 }
-.next-hand .gesture-choice{
+.next-hand .gesture-choice {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -367,50 +367,51 @@ body {
   height: 250px;
   margin-top: 6px;
 }
-.gesture-choice .gesture-choices{
+.gesture-choice .gesture-choices {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: #FFFCF4;
-  height: 100%;
+  background-color: #fffcf4;
+  height: 264px;
   width: 100%;
   max-width: 593px;
-  border: .5px solid #D9D7CC;
+  border: 0.5px solid #d9d7cc;
   border-radius: 15px;
 }
-.gesture-choice > :first-child{
-  background-color: #E6EBFF;
-  border: 2px solid #294BE8;
+.gesture-choice > :first-child {
+  background-color: #e6ebff;
+  border: 2px solid #294be8;
   border-radius: 15px;
-  color: #294BE8;
+  color: #294be8;
 }
-.choice-status,.choice-info{
+.choice-status,
+.choice-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 15px;
   font-family: "Inter", sans-serif;
-  font-size: .35rem;
+  font-size: 0.35rem;
 }
-.choice-status .selected-badge{
+.choice-status .selected-badge {
   display: flex;
   gap: 5px;
 }
-.selected-badge .check{
+.selected-badge .check {
   margin-top: 2.8px;
 }
-.gesture-choices .choice-illustration{
+.gesture-choices .choice-illustration {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.gesture-choices .choice-illustration img{
+.gesture-choices .choice-illustration img {
   width: 110px;
 }
-.choice-info{
+.choice-info {
   padding-bottom: 12px;
 }
-.choice-info .choice-name{
+.choice-info .choice-name {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 2.1rem;
   font-weight: 700;
@@ -418,33 +419,36 @@ body {
   color: #20251f;
   text-transform: uppercase;
 }
-.choice-info #marked{
-  color: #294BE8;
+.choice-info #marked {
+  color: #294be8;
 }
-.choice-info .winning-matchup{
-font-family: "Inter", sans-serif;
-color: #72746A;font-size: .6rem;font-weight: 400;
-margin-top: 21px;
+.choice-info .winning-matchup {
+  font-family: "Inter", sans-serif;
+  color: #72746a;
+  font-size: 0.6rem;
+  font-weight: 400;
+  margin-top: 21px;
 }
-.rules-footer{
+.rules-footer {
   display: flex;
   flex-direction: column;
 }
-.rules-footer .rules-strip{
+.rules-footer .rules-strip {
   display: flex;
   justify-content: space-between;
-  height: 140px;
+  height: 98px;
   width: 95%;
   margin: 0 auto;
-  border-top: .5px solid #D9D7CC;
-  border-bottom: .5px solid #D9D7CC;
-  font-size: .3rem;
+  padding: 20px 0;
+  border-top: 0.5px solid #d9d7cc;
+  border-bottom: 0.5px solid #d9d7cc;
+  font-size: 0.3rem;
 }
-.rules-strip .rules-intro{
+.rules-strip .rules-intro {
   height: 100px;
   width: 250px;
 }
-.rules-intro .rules-title{
+.rules-intro .rules-title {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 2.1rem;
   font-weight: 700;
@@ -453,8 +457,70 @@ margin-top: 21px;
   margin-bottom: 5px;
   text-transform: uppercase;
 }
-.rules-intro .rules-subtitle{
-  font-size: .65rem;
+.rules-intro .rules-subtitle {
+  font-size: 0.65rem;
   font-weight: 400;
-  color: #72746A;
+  color: #72746a;
+}
+.game-rules {
+  width: 299px;
+  display: flex;
+  justify-content: space-between;
+}
+.game-rules .rule-symbol {
+  height: 30px;
+  width: 30px;
+  background-color: #e6ebff;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+.game-rules .rule-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.4rem;
+}
+.rule-content .rule-explain {
+  color: #72746a;
+  font-size: 11px;
+  font-weight: 400;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.owner-tag {
+  display: flex;
+}
+.owner-tag h1 a {
+  text-decoration: none;
+}
+.owner-tag h1 a:hover {
+  text-decoration: underline;
+}
+.footer .tagline,
+.club-moto,
+.owner-tag h1,
+a {
+  text-transform: uppercase;
+  color: #72746a;
+  font-size: 11px;
+  font-weight: 400;
+}
+.closing-tag {
+  display: flex;
+  gap: 3px;
+}
+.closing-tag .mark {
+  height: 8px;
+  width: 8px;
+  margin-top: 3px;
+  background-color: #294be8;
 }
