@@ -33,7 +33,7 @@
                 </div>
                 <div class="nav-link">
                     <h1 class="active-nav">The Game</h1>
-                    <h1 class="rule-nav">How to play</h1>
+                    <a href="#ruleFooter" class="rule-nav">How to play</a>
                     <div class="game-mode">
                         <h1 class="mode-indigator">.</h1>
                         <h1 class="mode-lables">You vs. computer</h1>
@@ -165,8 +165,8 @@
                             <img src="sm-stone-gesture.png" alt="">
                         </div>
                         <div class="choice-info">
-                            <h1 class="choice-name"></h1>
-                            <h1 class="winning-matchup"></h1>
+                            <h1 id="marked" class="choice-name">stone</h1>
+                            <h1 class="winning-matchup">Crushes scissors</h1>
                         </div>
                     </div>
                     <div class="gesture-choices">
@@ -183,8 +183,8 @@
                             <img src="paper-gesture.png" alt="">
                         </div>
                         <div class="choice-info">
-                            <h1 class="choice-name"></h1>
-                            <h1 class="winning-matchup"></h1>
+                            <h1 class="choice-name">PAPER</h1>
+                            <h1 class="winning-matchup">Covers stone</h1>
                         </div>
                     </div>
                     <div class="gesture-choices">
@@ -201,15 +201,53 @@
                             <img src="sm-scissors-gesture.png" alt="">
                         </div>
                         <div class="choice-info">
-                            <h1 class="choice-name"></h1>
-                            <h1 class="winning-matchup"></h1>
+                            <h1 class="choice-name">SCISSORS</h1>
+                            <h1 class="winning-matchup">Cuts paper</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <footer></footer>
+    <footer id="ruleFooter">
+        <div class="rules-footer">
+            <div class="rules-strip">
+                <div class="rules-intro">
+                    <h1 class="rules-title">THE HOUSE RULES</h1>
+                    <h1 class="rules-subtitle">Easy to learn. Hard to put down.</h1>
+                </div>
+                <div class="game-rules">
+                    <div class="rule-symbol">
+                        <img src="mouse-pointer.svg" alt="">
+                    </div>
+                    <div class="rule-content">
+                        <h1 class="rule-title">PICK A HAND</h1>
+                        <h1 class="rule-explain">Choose stone, paper or scissors. The computer makes its pick, too.</h1>
+                    </div>
+                </div>
+                <div class="game-rules">
+                    <div class="rule-symbol">
+                        <img src="swords.svg" alt="">
+                    </div>
+                    <div class="rule-content">
+                        <h1 class="rule-title">WIN THE ROUND</h1>
+                        <h1 class="rule-explain">Stone crushes scissors. Scissors cuts paper. Paper covers stone.</h1>
+                    </div>
+                </div>
+                <div class="game-rules">
+                    <div class="rule-symbol">
+                        <img src="trophy.svg" alt="">
+                    </div>
+                    <div class="rule-content">
+                        <h1 class="rule-title">TAKE THE MATCH</h1>
+                        <h1 class="rule-explain">First to 5 wins takes the title. Same hand? It’s a draw. Go again.</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="footer"></div>
+        </div>
+    </footer>
+    
 </body>
 
 </html>
