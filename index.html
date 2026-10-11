@@ -53,10 +53,11 @@
                 </div>
             </div>
         </div>
-        <div class="game-surface">
+        <div id="gameplay" class="game-surface">
             <div class="match-board"> <!--Match board done-->
                 <div class="score-board"> <!--Score board done-->
                     <div class="competitor-score">
+                        <h1 class="score">0<span id="user-score">0</span></h1>
                         <div class="competitor-identity">
                             <div class="competitor-label">
                                 <div class="user-round">
@@ -65,13 +66,14 @@
                                 <div class="user-name">YOU</div>
                             </div>
                             <div class="win-marker">
-                                <img class="marker-img" src="./assets/svg/marker.svg" alt=""><img class="marker-img" src="./assets/svg/marker.svg"
-                                    alt=""><img class="marker-img" src="./assets/svg/marker.svg" alt=""><img class="marker-img"
-                                    src="./assets/svg/marker.svg" alt=""><img class="marker-img" src="./assets/svg/marker.svg" alt="">
+                                <img class="user-marker-img0" src="./assets/svg/marker.svg" alt="">
+                                <img class="user-marker-img1" src="./assets/svg/marker.svg" alt="">
+                                <img class="user-marker-img2" src="./assets/svg/marker.svg" alt="">
+                                <img class="user-marker-img3" src="./assets/svg/marker.svg" alt="">
+                                <img class="user-marker-img4" src="./assets/svg/marker.svg" alt="">
                             </div>
 
                         </div>
-                        <h1 class="score">03</h1>
                     </div>
                     <div class="match-format">
                         <h1 class="match-taget">FIRST TO 5 WINS</h1>
@@ -88,61 +90,64 @@
                                 <div class="user-name">COMPUTER</div>
                             </div>
                             <div class="win-marker">
-                                <img src="./assets/svg/marker.svg" alt=""><img src="./assets/svg/marker.svg" alt=""><img src="./assets/svg/marker.svg"
-                                    alt=""><img src="./assets/svg/marker.svg" alt=""><img src="./assets/svg/marker.svg" alt="">
+                                <img class="pc-marker-img0" src="./assets/svg/marker.svg" alt="">
+                                <img class="pc-marker-img1" src="./assets/svg/marker.svg" alt="">
+                                <img class="pc-marker-img2" src="./assets/svg/marker.svg" alt="">
+                                <img class="pc-marker-img3" src="./assets/svg/marker.svg" alt="">
+                                <img class="pc-marker-img4" src="./assets/svg/marker.svg" alt="">
                             </div>
 
                         </div>
-                        <h1 class="score">02</h1>
+                        <h1 class="score">0<span id="pc-score">0</span></h1>
                     </div>
                 </div>
                 <div class="round-arena">
-                    <div class="player-hand">
+                    <div class="player-hand user-hand-img">
                         <h1 class="competitor-label">You Picked</h1>
                         <div class="gesture-stage">
                             <img src="./assets/svg/player-backdrop.svg" alt="" class="gesture-backdrop">
-                            <img src="./assets/photos/stone-gesture.png" alt="" class="hand-gesture">
+                            <img id="user-img" src="" alt="" class="hand-gesture">
                         </div>
                         <div class="choice-label">
                             <div class="circle-check">
                                 <img src="./assets/svg/right-check.svg" alt="">
                             </div>
-                            <h1 class="choice-name">Stone</h1>
+                            <h1 id="user-choice-name" class="choice-name">Stone</h1>
                         </div>
                     </div>
                     <div class="player-result">
                         <div class="round-badge">
                             <h1 class="round-number">ROUND 05 · COMPLETE</h1>
                         </div>
-                        <h1 class="result-headline">YOU WIN!</h1>
+                        <h1 id="result-headline" class="result-headline"></h1>
                         <h1 class="result-explaination">Stone crushes scissors. Nice move.</h1>
-                        <div class="round-action">
-                            <div class="action">
+                        <a href="#Choose-your-next-move" class="round-action">
+                            <div id="action" class="action">
                                 <div class="rotate-ccw"><img src="./assets/svg/rotate-ccw.svg" alt=""></div>
-                                <h1 class="label">Play again</h1>
+                                <h1 class="label">Play</h1>
                             </div>
-                        </div>
+                        </a>
                         <h1 class="match-progress">Two more wins. Make them count.</h1>
                     </div>
-                    <div class="player-hand">
+                    <div class="player-hand pc-hand-img">
                         <h1 class="competitor-label">computer Picked</h1>
                         <div class="gesture-stage">
                             <img src="./assets/svg/computer-backdrop.svg" alt="" class="gesture-backdrop">
-                            <img src="./assets/photos/scissors-gesture.png" alt="" class="hand-gesture">
+                            <img id="pc-img" src="" alt="" class="hand-gesture">
                         </div>
                         <div class="choice-label">
                             <div class="circle-check">
                                 <img src="./assets/svg/right-check.svg" alt="">
                             </div>
-                            <h1 class="choice-name">Scissors</h1>
+                            <h1 id="pc-choice-name" class="choice-name"></h1>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="next-hand">
-                <div class="choice-heading">
+                <div id="Choose-your-next-move" class="choice-heading">
                     <div class="choice-instruction">
-                        <h1 class="title">WHAT'S YOUR NEXT MOVE?</h1>
+                        <h1 class="title">CHOOSE YOUR NEXT MOVE?</h1>
                         <h1 class="instruction">Three hands. Endless bragging rights.</h1>
                     </div>
                     <div class="reset-action">
@@ -151,25 +156,25 @@
                     </div>
                 </div>
                 <div class="gesture-choice">
-                    <div class="gesture-choices">
+                    <a href="#gameplay" id="stone" class="gesture-choices">
                         <div class="choice-status">
                             <h1 class="keyboard-shortcut">01</h1>
                             <div class="selected-badge">
                                 <div class="check">
-                                    <img src="./assets/svg/check.svg" alt="">
+                                    <img src="./assets/svg/arrow-up-right.svg" alt="">
                                 </div>
-                                <h1 class="selection-state">last Pick</h1>
+                                <h1 class="selection-state"></h1>
                             </div>
                         </div>
                         <div class="choice-illustration">
-                            <img src="./assets/photos/sm-stone-gesture.png" alt="">
+                            <img src="./assets/photos/sm-stone-gesture2.png" alt="">
                         </div>
                         <div class="choice-info">
-                            <h1 id="marked" class="choice-name">stone</h1>
+                            <h1 class="choice-name">Stone</h1>
                             <h1 class="winning-matchup">Crushes scissors</h1>
                         </div>
-                    </div>
-                    <div class="gesture-choices">
+                    </a>
+                    <a href="#gameplay" id="paper" class="gesture-choices">
                         <div class="choice-status">
                             <h1 class="keyboard-shortcut">02</h1>
                             <div class="selected-badge">
@@ -186,8 +191,8 @@
                             <h1 class="choice-name">PAPER</h1>
                             <h1 class="winning-matchup">Covers stone</h1>
                         </div>
-                    </div>
-                    <div class="gesture-choices">
+                    </a>
+                    <a href="#gameplay" id="scissor" class="gesture-choices">
                         <div class="choice-status">
                             <h1 class="keyboard-shortcut">03</h1>
                             <div class="selected-badge">
@@ -204,7 +209,7 @@
                             <h1 class="choice-name">SCISSORS</h1>
                             <h1 class="winning-matchup">Cuts paper</h1>
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -256,7 +261,7 @@
             </div>
         </div>
     </footer>
-    
+    <script src="./assets/javascript/script.js"></script>
 </body>
 
 </html>

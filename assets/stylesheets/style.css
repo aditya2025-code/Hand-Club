@@ -189,15 +189,13 @@ main {
   width: 20px;
   border-radius: 15px;
 }
-.win-marker > :nth-child(1) {
+/* .win-marker > :nth-child(1) {
+  background-color: #f4d94e;
+}*/
+.win-marked{
   background-color: #f4d94e;
 }
-.win-marker > :nth-child(2) {
-  background-color: #f4d94e;
-}
-.win-marker > :nth-child(3) {
-  background-color: #f4d94e;
-}
+
 .competitor-score .score {
   font-family: "Barlow Condensed", sans-serif;
   font-size: 60px;
@@ -233,15 +231,16 @@ main {
   display: flex;
   padding: 15px 37px 25px 37px;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 16px;
 }
 .round-arena .player-hand {
+  /* display: none; */
   height: 229px;
   width: 415px;
   flex: 1 1 0;
   max-width: 415px;
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: center;
   gap: 5px;
@@ -255,6 +254,7 @@ main {
   text-transform: uppercase;
 }
 .player-hand .choice-name {
+  /* display: none; */
   font-family: "Barlow Condensed", sans-serif;
   font-size: 1.8rem;
   font-weight: 800;
@@ -285,6 +285,7 @@ main {
   flex: 0 0 auto;
 }
 .player-result .round-badge {
+  display: none;
   background-color: #f4d94e;
   height: 20px;
   width: 137px;
@@ -297,12 +298,14 @@ main {
   font-size: 0.6rem;
 }
 .player-result .result-headline {
+  /* display: none; */
   color: #294be8;
   font-size: 3rem;
   font-weight: 900;
   font-style: normal;
 }
 .player-result .result-explaination {
+  display: none;
   color: #72746a;
   font-size: 0.9rem;
   font-weight: 400;
@@ -310,6 +313,7 @@ main {
 }
 .player-result .round-action {
   margin-top: 16px;
+  text-decoration: none;
 }
 .player-result .round-action .action {
   height: 50px;
@@ -327,12 +331,15 @@ main {
   background-color: #193acb;
 }
 .action .label {
+  text-decoration: none;
+  color: #ffffff;
   font-size: 0.9rem;
 }
 .action .rotate-ccw img {
   padding-top: 5px;
 }
 .player-result .match-progress {
+  display: none;
   color: #72746a;
   font-size: 0.8rem;
   font-weight: 400;
@@ -400,8 +407,9 @@ main {
   border: 0.5px solid #d9d7cc;
   border-radius: 15px;
   cursor: pointer;
+  text-decoration: none;
 }
-.gesture-choice > :first-child {
+.choice-marked {
   background-color: #e6ebff;
   border: 2px solid #294be8;
   border-radius: 15px;
@@ -417,6 +425,7 @@ main {
   font-size: 0.35rem;
 }
 .choice-status .selected-badge {
+  
   display: flex;
   gap: 5px;
 }
@@ -442,9 +451,9 @@ main {
   color: #20251f;
   text-transform: uppercase;
 }
-.choice-info #marked {
+/* .choice-info #marked {
   color: #294be8;
-}
+} */
 .choice-info .winning-matchup {
   font-family: "Inter", sans-serif;
   color: #72746a;
@@ -779,7 +788,7 @@ a {
     grid-column: 1 / -1;
     grid-row: 1;
     width: 100%;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     gap: 10px;
   }
@@ -789,8 +798,8 @@ a {
   .score-board > .competitor-score {
     min-width: 0;
     width: auto;
-    gap: 8px;
-    justify-content: space-between;
+    gap: 12px;
+    margin-left: 5px;
   }
   .competitor-score .score {
     font-size: 40px;
