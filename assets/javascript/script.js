@@ -10,6 +10,15 @@ const action = document.querySelector("#action")
 const actionlabel = document.querySelector("#action h1")
 const userScore = document.querySelector("#user-score")
 const pcScore = document.querySelector("#pc-score")
+const userWinCheckerIMG = document.querySelector("#user-win-checker")
+const pcWinCheckerIMG = document.querySelector("#pc-win-checker")
+const stoneLastPickImg = document.querySelector("#stone-last-pick-img")
+const stoneSelectionState = document.querySelector("#stone-selection-state")
+const paperLastPickImg = document.querySelector("#paper-last-pick-img")
+const paperSelectionState = document.querySelector("#paper-selection-state")
+const scissorLastPickImg = document.querySelector("#scissor-last-pick-img")
+const scissorSelectionState = document.querySelector("#scissor-selection-state")
+const resetBtn = document.querySelector("#reset-action")
 
 const userChoice = [stone, paper, scissor]
 const pcChoice = ["stone", "paper", "scissor"]
@@ -21,9 +30,13 @@ const imgdict = {
 
 let userPoints = 0
 let pcPoints = 0
-let userRoundPoints = 0
-let pcRoundPoints = 0
+let userRoundPoints = localStorage.getItem("user-points") || 0
+let pcRoundPoints = localStorage.getItem("pc-points") || 0
 let isPlaying = false
+let previous
+
+userScore.innerHTML = `${userRoundPoints}`
+pcScore.innerHTML = `${pcRoundPoints}`
 
 document.querySelector(".user-hand-img").style.display = "none"
 document.querySelector(".pc-hand-img").style.display = "none"
@@ -35,10 +48,20 @@ action.style.display = ""
 userChoice.forEach(whatclick => {
     whatclick.addEventListener("click", e => {
         if (isPlaying) return
-        action.style.display = "none"
-        // console.log(whatclick.id, userIMG);
+        action.style.display = "none";
+        // console.log(whatclick.id);
+        changeCSS(whatclick)
         SPSgame(whatclick.id)
+        previous = whatclick
     })
+})
+resetBtn.addEventListener("click", () => {
+    localStorage.removeItem("user-points")
+    localStorage.removeItem("pc-points")
+    userRoundPoints = 0
+    pcRoundPoints = 0
+    userScore.innerHTML = `${userRoundPoints}`
+    pcScore.innerHTML = `${pcRoundPoints}`
 })
 
 function changeImg(img, where) {
@@ -57,9 +80,11 @@ function changeScore(score, where, who) {
         if (who == "user") {
             userRoundPoints++
             where.innerHTML = userRoundPoints
+            localStorage.setItem("user-points", userRoundPoints)
         } else {
             pcRoundPoints++
             where.innerHTML = pcRoundPoints
+            localStorage.setItem("pc-points", pcRoundPoints)
         }
         for (let a = 0; a <= 4; a++) {
             document.querySelector(`.user-marker-img${a}`).classList.remove("win-marked")
@@ -72,7 +97,32 @@ function changeScore(score, where, who) {
     else
         actionlabel.innerHTML = "Play Again"
 }
-
+function changeCSS(target) {
+    if (previous) {
+        previous.style.border = "0.5px solid #d9d7cc"
+        previous.style.backgroundColor = "#fffcf4"
+        previous.style.color = "#72746a"
+        stoneLastPickImg.src = "./assets/svg/arrow-up-right.svg"
+        stoneSelectionState.innerHTML = ""
+        paperLastPickImg.src = "./assets/svg/arrow-up-right.svg"
+        paperSelectionState.innerHTML = ""
+        scissorLastPickImg.src = "./assets/svg/arrow-up-right.svg"
+        scissorSelectionState.innerHTML = ""
+    }
+    target.style.border = "2px solid #294be8"
+    target.style.backgroundColor = "#e6ebff"
+    target.style.color = "#294be8"
+    if (target.id === "stone") {
+        stoneLastPickImg.src = ""
+        stoneSelectionState.innerHTML = "Last Pick"
+    } else if (target.id === "paper") {
+        paperLastPickImg.src = ""
+        paperSelectionState.innerHTML = "Last Pick"
+    } else {
+        scissorLastPickImg.src = ""
+        scissorSelectionState.innerHTML = "Last Pick"
+    }
+}
 function SPSgame(user) {
     isPlaying = true
     document.querySelector(".user-hand-img").style.display = "flex"
@@ -80,9 +130,9 @@ function SPSgame(user) {
     userChoiceName.style.display = ""
     pcChoiceName.style.display = ""
     resultHeadline.style.display = ""
-    
+    userWinCheckerIMG.src = ""
+    pcWinCheckerIMG.src = ""
     resultHeadline.innerHTML = "Choosing..."
-    
     changeImg(user, userIMG)
     userChoiceName.innerHTML = user
     const random = Math.floor(Math.random() * 3)
@@ -101,28 +151,29 @@ function SPSgame(user) {
             changeImg(pc, pcIMG)
             pcChoiceName.innerHTML = pc
             // console.log(user,pc);
-            
             resultHeadline.innerHTML = whoWin(user, pc)
             action.style.display = ""
             isPlaying = false
         }
     }, 90)
 }
-
 function whoWin(user, pc) {
     if (user === pc) {
         actionlabel.innerHTML = "Play Again"
-        return "DRAW"}
+        return "DRAW"
+    }
     else if ((user === "stone" && pc === "scissor") ||
         (user === "paper" && pc === "stone") ||
         (user === "scissor" && pc === "paper")) {
         userPoints++
         changeScore(userPoints, userScore, "user")
+        userWinCheckerIMG.src = "./assets/svg/right-check.svg"
         return "YOU WIN!"
     }
     else {
         pcPoints++
         changeScore(pcPoints, pcScore, "pc")
+        pcWinCheckerIMG.src = "./assets/svg/right-check.svg"
         return "COMPUTER WIN"
     }
 }

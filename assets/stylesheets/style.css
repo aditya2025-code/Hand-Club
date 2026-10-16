@@ -192,7 +192,7 @@ main {
 /* .win-marker > :nth-child(1) {
   background-color: #f4d94e;
 }*/
-.win-marked{
+.win-marked {
   background-color: #f4d94e;
 }
 
@@ -376,6 +376,9 @@ main {
   gap: 4px;
   cursor: pointer;
 }
+.reset-action:hover{
+  text-decoration: underline;
+}
 .reset-action .reset-label {
   color: #72746a;
   font-family: "Inter", sans-serif;
@@ -409,11 +412,11 @@ main {
   cursor: pointer;
   text-decoration: none;
 }
-.choice-marked {
+.border-marked {
   background-color: #e6ebff;
   border: 2px solid #294be8;
   border-radius: 15px;
-  color: #294be8;
+  color: #294be8 !important;
 }
 .choice-status,
 .choice-info {
@@ -425,7 +428,6 @@ main {
   font-size: 0.35rem;
 }
 .choice-status .selected-badge {
-  
   display: flex;
   gap: 5px;
 }
@@ -451,15 +453,18 @@ main {
   color: #20251f;
   text-transform: uppercase;
 }
-/* .choice-info #marked {
+.title-marked {
   color: #294be8;
-} */
+}
 .choice-info .winning-matchup {
   font-family: "Inter", sans-serif;
   color: #72746a;
   font-size: 0.6rem;
   font-weight: 400;
   margin-top: 21px;
+}
+.winning-matchup-marked {
+  color: #294be8 !important;
 }
 .rules-footer {
   display: flex;
@@ -764,7 +769,7 @@ a {
   .footer {
     width: calc(100% - 40px);
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 }
 
@@ -820,6 +825,9 @@ a {
   }
   .player-hand .competitor-label {
     text-align: center;
+  }
+  .player-hand .choice-label .circle-check {
+    padding-top: 7px;
   }
   .player-result .result-headline {
     font-size: 2.2rem;
